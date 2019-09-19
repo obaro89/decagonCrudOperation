@@ -1,0 +1,26 @@
+.v_style  img
+{
+  border: 5px solid white;
+  
+  box-shadow: 2px 3px 2px 3px;
+}
+
+
+.shadow{
+    border: 5px solid white;
+    padding: 0;
+}
+
+.shadow, .card, .card img{
+   
+    padding: 0;
+}
+.gifsuccess{
+    display: none;
+}
+nav{
+    border-bottom: 2px solid #007bff;
+    background-color:#F5F5F5;
+    height: 35px;
+    margin-bottom: 0px;
+  }

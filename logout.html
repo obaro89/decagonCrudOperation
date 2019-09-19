@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Fashion Manager</title>
+  
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="gothic/font.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <script src="https://kit.fontawesome.com/586b225f66.js"></script>
+  <link href="css/shop-homepage.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+
+
+body {
+  
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: 'gothic';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+
+
+      }
+  
+  </style>
+<body>
+        <div class="alert alert-danger text-center" role="alert" style="width: 50%; margin: auto; border-radius: 0px;">
+                <h4 class="alert-heading">You have been logged Out!</h4>
+                <p>We expect you soon. </p>
+                <hr>
+                <p class="mb-0">If this was a mistake, Kindly<a href="http://localhost:3000" class="alert-link"> Click Here</a> to login.</p>
+        </div>
+</body>
+
+<script>
+if(sessionStorage.getItem("sessionID"))
+  {
+    sessionStorage.removeItem("sessionID");
+  }
+</script>
+
+
+  <p  class="m-0 text-center">Copyright &copy; Decagon Bootcamp 2019 by Osaretin Igbinobaro</p>
+
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>

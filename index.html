@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Decagon Fashion Manager</title>
+  
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="gothic/font.css" rel="stylesheet">
+  
+    <!-- Custom styles for this template -->
+    <script src="https://kit.fontawesome.com/586b225f66.js"></script>
+    <link href="css/shop-homepage.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+        html,
+body {
+  height: 100%;
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+      }
+    </style>
+    <!-- Custom styles for this template -->
+<link href="signin.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+
+<form class="form-signin">
+    <h1 style="font-size: 18px;"><img src="design_photos/logo.png" alt="" style="border:4px solid #007bff; box-shadow: 1px 2px 1px 2px;"></h1>
+  
+  <h1 class="h3 mb-3 font-weight-normal"><i class="fas fa-sign-in-alt"></i> Sign in</h1>
+  <label for="inputEmail" class="sr-only">Email address</label>
+  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+  <div class="checkbox mb-3">
+   
+  </div>
+  <button id="login" class="btn btn-lg btn-primary btn-block" type="button">Sign in</button>
+  <p  class="m-0 text-center">Copyright &copy; Decagon Bootcamp 2019 by Osaretin Igbinobaro</p>
+</form>
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+ $("#login").click(function(){
+     
+   var email=$("#inputEmail").val();
+   var pwd =$("#inputPassword").val();
+   var check =0;
+   if(!email=="" && !pwd=="")
+   {
+    $.ajax({
+      url:"http://localhost:3000/admin",
+      type: "GET",
+    }).done((data)=>{
+      
+        for (let i=0; i< data.length; i++)
+        {
+            if((data[i].a_email==email) && (data[i].a_pwd==pwd))
+            {
+              check++;
+              var sessionID=data[i].id;
+              
+            }  
+        }
+
+        if(check==1)
+        {
+            sessionStorage.setItem("sessionID", ""+sessionID+"")
+            window.location.href="home.html";
+             
+        }else{alert("user not found! Please contact admin");}
+    })
+  
+     
+   }else{
+    alert('empty fields')
+   }
+})
+
+</script>
+</body>
+</html>

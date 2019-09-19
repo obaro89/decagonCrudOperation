@@ -1,0 +1,238 @@
+<script></script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Fashion Manager</title>
+  
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="gothic/font.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <script src="https://kit.fontawesome.com/586b225f66.js"></script>
+  <link href="css/shop-homepage.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <script>
+  if(sessionStorage.getItem("sessionID"))
+  {
+    var session = sessionStorage.getItem("sessionID");
+  }else{
+    window.location.href="index.html";
+  }
+  
+  
+  </script>
+<style>
+  body, div, p, span, a, nav, footer, small{
+    font-family: 'gothic';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    
+  }
+  nav{
+    border-bottom: 2px solid #007bff;
+    background-color:#F5F5F5;
+    height: 35px;
+    margin-bottom: 0px;
+  }
+footer{
+  border-top: 2px solid #e9ecf0;
+  background-color:#F5F5F5;
+  
+}
+.bord{
+  border-left: 2px solid #dc3545;
+  margin-top: 2px;
+  color: #343a40;
+  
+  
+}
+.bord:hover{
+  text-decoration: none;
+}
+.mrg{
+  margin: 0;
+  margin-right: 0;
+}
+</style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="http://localhost:3000/home.html">  
+          </a>Fashion Design Manager</a>
+      <div class="collapse navbar-collapse" id="navbarResponsive">  
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container" style="margin-bottom: 30px;">
+
+    <div class="row">
+
+      <div class="col-lg-3" style="margin-top: 20px;">
+          <a class="navbar-brand" href="#">
+              <img src="design_photos/logo.png" alt="" style="border-left:2px solid #dc3545;">
+        <div class="list-group">
+          <a  class="list-group-item add_designs bord" id="welcome"><i class="fas fa-user-secret"></i>  </a>
+          <a id="ttip" class="list-group-item bord" data-toggle="tooltip" data-html="true" title="Please click on your preferred style to edit."><i class="far fa-edit"></i> Edit Design</a>
+          
+              <a href="#" class="list-group-item add_designs bord" data-toggle="modal" data-target="#Modal_add"><i class="fas fa-plus-square"></i> Add Design</a>
+              <a href="#" class="list-group-item bord"><i class="fas fa-user-plus"></i> Add Stylist</a>
+              <a href="http://localhost:3000/logout.html" class="list-group-item bord"><i class="fas fa-power-off"></i> Logout</a>
+            
+        </div>
+
+      </div>
+      <!-- /.col-lg-3 -->
+
+      <div class="row col-lg-8" style="margin-top: 20px;" id="design_display">
+
+
+        <!-- /.row -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- /.modal to post new design -->
+<div id="modal">
+    <div class="modal fade" id="Modal_add" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content" id="successpost">
+              
+            <div class="modal-header">
+              
+              <h5 class="modal-title text-center h_modal_add" id="Modal_add">Do you want to add a new Design?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <form id="postform">
+                    <div class="form-group row">
+                      
+                      <div class="col-sm-12">
+                        <input type="text" class="form-control" id="DesignName" placeholder="Enter Design Name" required>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                        
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control" id="StylistName" placeholder="Enter Stylist Name" required>
+                        </div>
+                    </div>
+
+                      <div class="form-group row">
+                          
+                          <div class="col-sm-12">
+                            <input type="text" class="form-control" id="DesignPhoto" placeholder="Enter Design Photo URL" required>
+                          </div>
+                      </div>
+
+                     
+
+                </form>   
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-add add_designs2 btn-success">Create New Design</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+ <!-- /.modal to update design -->
+ <div id="modal">
+    <div class="modal fade" id="Modal_U" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content" id="successpost2">
+              
+            <div class="modal-header">
+              
+              <h5 class="modal-title text-center h_modal_add" id="Modal_add">Do you want to Amend design record?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="modal-body2">
+                <form id="updateform">
+                    <div class="form-group row">
+                      
+                      <div class="col-sm-12">
+                        <input type="text" class="form-control" id="UDesignName" placeholder="Enter Design Name" required>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                        
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control" id="UStylistName" placeholder="Enter Stylist Name" required>
+                        </div>
+                    </div>
+
+                      <div class="form-group row">
+                          
+                          <div class="col-sm-12">
+                            <input type="text" class="form-control" id="UDesignPhoto" placeholder="Enter Design Photo URL" required>
+                          </div>
+                      </div>
+
+                     
+
+                </form>   
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-add U_designs2 btn-success">Update Design</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+
+</div>
+  <!-- Footer -->
+  <footer class="py-1 topmargin" id="footer">
+    <div class="container">
+      <p  class="m-0 text-center">Copyright &copy; Decagon Bootcamp 2019 by Osaretin Igbinobaro</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="core.js"></script>
+  <script src="session.js"></script>
+  <script>
+  $('#ttip').tooltip();
+  
+  </script>
+ 
+
+</body>
+
+</html>

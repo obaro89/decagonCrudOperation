@@ -1,0 +1,37 @@
+html,
+body {
+  height: 100%;
+  
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+
+#footer{
+height: 50px;
+background-color: white;
+color: white;
+margin-top: 20px;
+
+
+}
+.topmargin{
+  margin-top: 20px;
+}
+body, div, p, span, a, nav, footer, small{
+  font-family: 'gothic';
+  font-style: normal;
+  font-weight: 400;
+}
+.v_style  img
+{
+  border: 5px solid red;
+}
+
+
+
